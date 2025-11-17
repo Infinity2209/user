@@ -6,22 +6,22 @@
 [[redirects]]
   from = "/users"
   to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/users"
-  status = 200
+  status = 302
 
 [[redirects]]
   from = "/users/*"
   to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/users/:splat"
-  status = 200
+  status = 302
 
 [[redirects]]
   from = "/products"
   to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/products"
-  status = 200
+  status = 302
 
 [[redirects]]
   from = "/products/*"
   to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/products/:splat"
-  status = 200
+  status = 302
 
 [build.environment]
   NODE_VERSION = "18"
