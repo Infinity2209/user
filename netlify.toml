@@ -5,22 +5,22 @@
 # Redirect API calls to your JSON server
 [[redirects]]
   from = "/users"
-  to = "https://your-json-server-endpoint.herokuapp.com/users"
+  to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/users"
   status = 200
 
 [[redirects]]
   from = "/users/*"
-  to = "https://your-json-server-endpoint.herokuapp.com/users/:splat"
+  to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/users/:splat"
   status = 200
 
 [[redirects]]
   from = "/products"
-  to = "https://your-json-server-endpoint.herokuapp.com/products"
+  to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/products"
   status = 200
 
 [[redirects]]
   from = "/products/*"
-  to = "https://your-json-server-endpoint.herokuapp.com/products/:splat"
+  to = "https://my-json-server.typicode.com/Infinity2209/userAndProductManagement/products/:splat"
   status = 200
 
 [build.environment]
