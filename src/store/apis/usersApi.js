@@ -54,18 +54,18 @@ export const usersApi = createApi({
   endpoints: (builder) => ({
     // Get all users
     getUsers: builder.query({
-      query: () => '/users',
+      query: () => (import.meta.env.PROD ? '/api/users' : '/users'),
       providesTags: ['Users'],
     }),
     // Get single user by ID
     getUser: builder.query({
-      query: (id) => `/users/${id}`,
+      query: (id) => (import.meta.env.PROD ? `/api/users/${id}` : `/users/${id}`),
       providesTags: (result, error, id) => [{ type: 'Users', id }],
     }),
     // Create new user
     createUser: builder.mutation({
       query: (user) => ({
-        url: '/users',
+        url: import.meta.env.PROD ? '/api/users' : '/users',
         method: 'POST',
         body: user,
       }),
@@ -91,7 +91,7 @@ export const usersApi = createApi({
     // Update existing user
     updateUser: builder.mutation({
       query: ({ id, ...user }) => ({
-        url: `/users/${id}`,
+        url: import.meta.env.PROD ? `/api/users/${id}` : `/users/${id}`,
         method: 'PUT',
         body: user,
       }),
@@ -100,7 +100,7 @@ export const usersApi = createApi({
     // Delete user
     deleteUser: builder.mutation({
       query: (id) => ({
-        url: `/users/${id}`,
+        url: import.meta.env.PROD ? `/api/users/${id}` : `/users/${id}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Users'],

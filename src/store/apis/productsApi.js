@@ -54,18 +54,18 @@ export const productsApi = createApi({
   endpoints: (builder) => ({
     // Get all products
     getProducts: builder.query({
-      query: () => '/products',
+      query: () => (import.meta.env.PROD ? '/api/products' : '/products'),
       providesTags: ['Products'],
     }),
     // Get single product by ID
     getProduct: builder.query({
-      query: (id) => `/products/${id}`,
+      query: (id) => (import.meta.env.PROD ? `/api/products/${id}` : `/products/${id}`),
       providesTags: (result, error, id) => [{ type: 'Products', id }],
     }),
     // Create new product
     createProduct: builder.mutation({
       query: (product) => ({
-        url: '/products',
+        url: import.meta.env.PROD ? '/api/products' : '/products',
         method: 'POST',
         body: product,
       }),
@@ -74,7 +74,7 @@ export const productsApi = createApi({
     // Update existing product
     updateProduct: builder.mutation({
       query: ({ id, ...product }) => ({
-        url: `/products/${id}`,
+        url: import.meta.env.PROD ? `/api/products/${id}` : `/products/${id}`,
         method: 'PUT',
         body: product,
       }),
@@ -83,7 +83,7 @@ export const productsApi = createApi({
     // Delete product
     deleteProduct: builder.mutation({
       query: (id) => ({
-        url: `/products/${id}`,
+        url: import.meta.env.PROD ? `/api/products/${id}` : `/products/${id}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Products'],
