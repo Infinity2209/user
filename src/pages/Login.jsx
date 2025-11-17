@@ -75,14 +75,13 @@ const Login = () => {
                         <div className="space-y-4 sm:space-y-5">
                             {/* Email Input */}
                             <div>
-                                <label 
-                                    htmlFor="email" 
+                                <label
+                                    htmlFor="email"
                                     className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2"
                                 >
                                     {t('Email')}
                                 </label>
                                 <div className="relative">
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-500" />
                                     <Input
                                         id="email"
                                         name="email"
@@ -104,14 +103,13 @@ const Login = () => {
 
                             {/* Password Input */}
                             <div>
-                                <label 
-                                    htmlFor="password" 
+                                <label
+                                    htmlFor="password"
                                     className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2"
                                 >
                                     {t('Password')}
                                 </label>
                                 <div className="relative">
-                                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-500" />
                                     <Input
                                         id="password"
                                         name="password"
@@ -128,8 +126,8 @@ const Login = () => {
                                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none"
                                         onClick={() => setShowPassword(!showPassword)}
                                     >
-                                        {showPassword ? 
-                                            <EyeOff className="h-4 w-4 sm:h-5 sm:w-5" /> : 
+                                        {showPassword ?
+                                            <EyeOff className="h-4 w-4 sm:h-5 sm:w-5" /> :
                                             <Eye className="h-4 w-4 sm:h-5 sm:w-5" />
                                         }
                                     </button>
@@ -175,13 +173,13 @@ const Login = () => {
 
                         {/* Footer Links - Responsive layout */}
                         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 text-xs sm:text-sm pt-2">
-                            <button 
+                            <button
                                 type="button"
                                 className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium transition-colors"
                             >
                                 {t('Forgot password?')}
                             </button>
-                            <button 
+                            <button
                                 type="button"
                                 className="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                             >
@@ -194,7 +192,7 @@ const Login = () => {
                 {/* Bottom Sign Up Link - Responsive text */}
                 <p className="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 px-4">
                     {t("Don't have an account?")}{' '}
-                    <button 
+                    <button
                         type="button"
                         className="font-semibold text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors"
                     >

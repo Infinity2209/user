@@ -122,6 +122,74 @@ npm run build
 npm run preview
 ```
 
+## 🚀 Deployment
+
+### Local Development
+1. Start the JSON server:
+```bash
+npm run json-server
+```
+
+2. In another terminal, start the development server:
+```bash
+npm run dev
+```
+
+### Production Deployment
+
+#### Deploying to Netlify with JSON Server Backend
+
+**Prerequisites:**
+- A JSON server hosted online (Heroku, Railway, Render, etc.)
+- Netlify account
+
+**Steps:**
+
+1. **Host your JSON server:**
+   - Upload your `db.json` file to a hosting service
+   - Example: Deploy to Heroku with JSON Server
+   - Get the URL (e.g., `https://your-json-server.herokuapp.com`)
+
+2. **Deploy to Netlify:**
+   ```bash
+   # Set environment variable
+   export JSON_SERVER_URL=https://your-json-server.herokuapp.com
+
+   # Run deployment script
+   chmod +x deploy.sh
+   ./deploy.sh
+   ```
+
+   Or manually:
+   ```bash
+   # Update netlify.toml with your JSON server URL
+   # Replace 'https://your-json-server-endpoint.herokuapp.com' with your actual URL
+
+   # Build and deploy
+   npm run build
+   npx netlify deploy --prod --dir=dist
+   ```
+
+3. **Alternative: Use the deploy script**
+   - Set your JSON server URL as an environment variable
+   - Run `./deploy.sh` which will automatically update the configuration
+
+**Important Notes:**
+- The app automatically detects production environment and uses relative URLs for API calls
+- Netlify redirects handle routing API calls to your JSON server
+- Make sure your JSON server allows CORS from your Netlify domain
+
+#### Troubleshooting Deployment Issues
+
+**404 Errors on API calls:**
+- Verify your JSON server is running and accessible
+- Check that the URL in `netlify.toml` matches your JSON server
+- Ensure CORS is properly configured on your JSON server
+
+**Connection Refused:**
+- Make sure you're using HTTPS URLs in production
+- Verify the JSON server endpoint is correct
+
 ## 🔐 Authentication
 
 ### Default Credentials

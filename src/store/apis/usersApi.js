@@ -8,11 +8,21 @@
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+// Get base URL from environment or use fallback
+const getBaseUrl = () => {
+  // For production (Netlify), use relative URLs
+  if (import.meta.env.PROD) {
+    return '';
+  }
+  // For development, use localhost
+  return 'http://localhost:3001';
+};
+
 export const usersApi = createApi({
   reducerPath: 'usersApi',
   // Base query with authentication header preparation
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3001',
+    baseUrl: getBaseUrl(),
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
