@@ -11,9 +11,9 @@ import axios from 'axios';
 
 // Get base URL from environment or use fallback
 const getBaseUrl = () => {
-  // For production (Netlify), use My JSON Server
+  // For production (Netlify), use Netlify Functions
   if (import.meta.env.PROD) {
-    return 'https://my-json-server.typicode.com/Infinity2209/user';
+    return '';
   }
   // For development, use localhost
   return 'http://localhost:3001';
