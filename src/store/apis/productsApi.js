@@ -10,9 +10,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Get base URL from environment or use fallback
 const getBaseUrl = () => {
-  // For production (Netlify), use relative URLs
+  // For production (Netlify), use My JSON Server
   if (import.meta.env.PROD) {
-    return '';
+    return 'https://my-json-server.typicode.com/Infinity2209/userAndProductManagement';
   }
   // For development, use localhost
   return 'http://localhost:3001';
